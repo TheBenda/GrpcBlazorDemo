@@ -8,8 +8,8 @@ namespace BlazorFrontend.Clients;
 
 public class GrpcWeatherForecastClient : IGrpcWeatherForecastClient
 {
-    private readonly WeatherForecasts.WeatherForecastsClient _weatherForecastsClient; 
-    
+    private readonly WeatherForecasts.WeatherForecastsClient _weatherForecastsClient;
+
     public GrpcWeatherForecastClient()
     {
         var grpcChannel = GrpcChannel.ForAddress("http://localhost:5249");
@@ -21,7 +21,7 @@ public class GrpcWeatherForecastClient : IGrpcWeatherForecastClient
     {
         return (await _weatherForecastsClient.GetWeatherForecastAsync(new Empty())).Forecasts;
     }
-    
+
     public Task<GetWeatherForecastResponse> GetWeatherForecastsTask()
     {
         return _weatherForecastsClient.GetWeatherForecastAsync(new Empty()).ResponseAsync;
