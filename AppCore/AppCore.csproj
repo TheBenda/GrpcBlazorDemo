@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsAspireHost>true</IsAspireHost>
+        <UserSecretsId>DCA83D16-364A-496A-B854-CF4D111BC699</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.0-preview.5.24201.12"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BlazorFrontend\BlazorFrontend.csproj" />
+      <ProjectReference Include="..\GrpcBackend\GrpcBackend.csproj" />
+    </ItemGroup>
+
+</Project>

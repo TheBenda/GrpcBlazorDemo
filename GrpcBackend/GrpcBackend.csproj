@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>GrcpBackend</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Protobuf Include="..\Proto\weather.proto" GrpcServices="Server" Link="Protos\weather.proto"/>
+        <Protobuf Include="..\Proto\greet.proto" GrpcServices="Server" Link="Protos\greet.proto"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.57.0"/>
+        <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.62.0" />
+        <PackageReference Include="Grpc.AspNetCore.Web" Version="2.62.0" />
+    </ItemGroup>
+
+</Project>
