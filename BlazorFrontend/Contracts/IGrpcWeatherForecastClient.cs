@@ -1,5 +1,5 @@
 using Grpc.Core;
-using GrpcBackend;
+using WeatherCommons;
 
 namespace BlazorFrontend.Contracts;
 

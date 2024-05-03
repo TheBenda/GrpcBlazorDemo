@@ -1,8 +1,8 @@
 using BlazorFrontend.Contracts;
 using Google.Protobuf.WellKnownTypes;
-using Grpc.Core;
 using Grpc.Net.Client;
-using GrpcBackend;
+using Weather;
+using WeatherCommons;
 
 namespace BlazorFrontend.Clients;
 

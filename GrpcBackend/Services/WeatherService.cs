@@ -1,8 +1,9 @@
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
-using GrpcBackend;
+using Weather;
+using WeatherCommons;
 
-namespace GrcpBackend.Services;
+namespace GrpcBackend.Services;
 
 public class WeatherService : WeatherForecasts.WeatherForecastsBase
 {

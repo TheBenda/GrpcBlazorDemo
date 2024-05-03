@@ -2,7 +2,7 @@ using BlazorFrontend.Clients;
 using BlazorFrontend.Components;
 using BlazorFrontend.Contracts;
 using Grpc.Net.Client.Web;
-using GrpcBackend;
+using Weather;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// builder.Services.AddGrpc();
 builder.Services.AddGrpcClient<WeatherForecasts.WeatherForecastsClient>(options =>
 {
     options.Address = new Uri("http://grcpbackend");

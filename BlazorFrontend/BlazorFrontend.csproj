@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GrpcBackend\GrpcBackend.csproj" />
+      <ProjectReference Include="..\GrpcCommons\GrpcCommons.csproj" />
     </ItemGroup>
 
 </Project>
