@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AppHost\AppHost.ServiceDefaults\AppHost.ServiceDefaults.csproj" />
       <ProjectReference Include="..\GrpcCommons\GrpcCommons.csproj" />
     </ItemGroup>
 

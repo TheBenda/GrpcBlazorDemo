@@ -3,6 +3,7 @@ using GrpcBackend.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.AddServiceDefaults();
 builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection();
 
@@ -22,4 +23,5 @@ app.MapGet("/",
     () =>
         "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
+app.MapDefaultEndpoints();
 app.Run();
