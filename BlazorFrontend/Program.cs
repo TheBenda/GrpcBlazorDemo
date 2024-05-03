@@ -10,10 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-// builder.Services.AddGrpc();
 builder.Services.AddGrpcClient<WeatherForecasts.WeatherForecastsClient>(options =>
 {
-    options.Address = new Uri("http://grcpbackend");
+    options.Address = new Uri("http://localhost:5249");
 }).ConfigurePrimaryHttpMessageHandler(() => new GrpcWebHandler(new HttpClientHandler()));
 
 builder.Services.AddScoped<IGrpcWeatherForecastClient, GrpcWeatherForecastClient>();
