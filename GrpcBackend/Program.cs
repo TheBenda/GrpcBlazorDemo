@@ -16,7 +16,6 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseGrpcWeb();
-app.MapGrpcService<GreeterService>();
 app.MapGrpcService<WeatherService>().EnableGrpcWeb();
 app.MapGrpcReflectionService();
 app.MapGet("/",
