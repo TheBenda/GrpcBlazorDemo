@@ -18,7 +18,7 @@ public class WeatherService : WeatherForecasts.WeatherForecastsBase
         {
             Date = DateTime.UtcNow.AddDays(index).ToTimestamp(),
             TemperatureC = rng.Next(-20, 55),
-            Sumary = Summaries[rng.Next(Summaries.Length)]
+            Summary = Summaries[rng.Next(Summaries.Length)]
         }).ToArray();
 
         var response = new GetWeatherForecastResponse();
