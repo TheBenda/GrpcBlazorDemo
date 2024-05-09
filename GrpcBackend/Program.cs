@@ -1,4 +1,6 @@
 using GrpcBackend.Services;
+using Persistence.Data;
+using Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,11 +9,9 @@ builder.AddServiceDefaults();
 builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection();
 
-// builder.WebHost.ConfigureKestrel(options =>
-// {
-//     // Setup a HTTP/2 endpoint without TLS.
-//     options.ListenAnyIP(5249, o => o.Protocols = HttpProtocols.Http2);
-// });
+builder.AddNpgsqlDbContext<PizzaOrderDbContext>("pizzaorderdb");
+
+builder.Services.AddScoped<IPizzaOrderRepository, PizzaOrderRepository>();
 
 var app = builder.Build();
 

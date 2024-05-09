@@ -4,7 +4,7 @@ var pizzaOrderDb = builder.AddPostgres("pizzaorder", password: builder.CreateSta
     .WithDataVolume()
     .AddDatabase("pizzaorderdb");
 
-var grpcbackend = builder.AddProject<Projects.GrpcBackend>("grpcbackend");
+var grpcbackend = builder.AddProject<Projects.GrpcBackend>("grpcbackend").WithReference(pizzaOrderDb);
 
 builder.AddProject<Projects.BlazorFrontend>("blazorfrontend").WithReference(grpcbackend);
 
